@@ -33,8 +33,6 @@ public class CharacterControllerISO : MonoBehaviour
 
     void Move()
     {
-        ////Vector3 direction = new Vector3(Input.GetAxis("HorizontalKey"), 0, Input.GetAxis("VerticalKey"));
-
         Vector3 rightMovement = right * Input.GetAxis("Horizontal");
         Vector3 forwardMovement = forward * Input.GetAxis("Vertical");
 
@@ -42,10 +40,5 @@ public class CharacterControllerISO : MonoBehaviour
         transform.forward = -direction;
 
         rb.velocity = direction * moveSpeed;
-        Debug.Log(rb.velocity);
-
-        //transform.forward = -heading;
-        //transform.position += heading * moveSpeed * Time.deltaTime;//+= rightMovement;
-        ////transform.position += upMovement;
     }
 }
