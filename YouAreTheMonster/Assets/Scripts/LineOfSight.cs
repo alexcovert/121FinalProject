@@ -2,24 +2,19 @@
 
 public class LineOfSight : MonoBehaviour
 {
-    [SerializeField]
-    private int sightDistance;
+    public int SightDistance;
 
-    private RaycastHit hit;
+    public bool PlayerSeen;
+
     private void Update()
     {
-        if (Physics.Raycast(transform.position, transform.forward, out hit, sightDistance))
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit, SightDistance))
         {
-            if(hit.transform.tag == "Player")
-            {
-                Debug.Log("Sees Player");
-            }
+            Debug.Log("raycasthit");
+            Debug.Log(hit.transform.tag);
+            PlayerSeen = (hit.transform.tag == "Player");
         }
-    }
-
-    private void DrawRay()
-    {
-
     }
 }
 

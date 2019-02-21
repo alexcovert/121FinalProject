@@ -11,19 +11,45 @@ public class Wander : MonoBehaviour
 
     private Vector3 wayPoint;
 
+    private LineOfSight sight;
+
     void Start()
     {
+        sight = GetComponent<LineOfSight>();
+
         SetDestination();
     }
 
     void Update()
     {
-        transform.position += transform.TransformDirection(Vector3.forward) * speed * Time.deltaTime;
-        if ((transform.position - wayPoint).magnitude < 3)
+//        Debug.Log(sight.PlayerSeen);
+        if (!sight.PlayerSeen)
         {
-            // when the distance between us and the target is less than 3
-            // create a new way point target
-            SetDestination();
+            transform.position += transform.TransformDirection(Vector3.forward) * speed * Time.deltaTime;
+            if ((transform.position - wayPoint).magnitude < 3)
+            {
+                // when the distance between us and the target is less than 3
+                // create a new way point target
+                SetDestination();
+            }
+        }
+        else if(Physics.OverlapSphere(transform.position, sight.SightDistance).Length > 0)
+        {
+            Collider[] colliders = Physics.OverlapSphere(transform.position, sight.SightDistance);
+            bool playerInSphere = false;
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                if(colliders[i].tag == "Player")
+                {
+                    transform.LookAt(colliders[i].transform);
+                    playerInSphere = true;
+                }
+            }
+
+            if(!playerInSphere)
+            {
+                sight.PlayerSeen = false;
+            }
         }
     }
 
