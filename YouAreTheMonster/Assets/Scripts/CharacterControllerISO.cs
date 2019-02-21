@@ -5,7 +5,7 @@
 public class CharacterControllerISO : MonoBehaviour
 {
     [SerializeField]
-    float moveSpeed;
+    private float moveSpeed;
 
     private Rigidbody rb;
 
@@ -15,6 +15,7 @@ public class CharacterControllerISO : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
+        //Set "forward" and "right" based on camera 
         forward = Camera.main.transform.forward;
         forward.y = 0;
         forward = Vector3.Normalize(forward);
