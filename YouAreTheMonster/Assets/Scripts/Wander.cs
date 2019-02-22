@@ -49,6 +49,7 @@ public class Wander : MonoBehaviour
             if(!playerInSphere)
             {
                 sight.PlayerSeen = false;
+                SetDestination();
             }
         }
     }
