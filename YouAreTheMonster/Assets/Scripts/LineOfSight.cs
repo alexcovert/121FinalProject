@@ -9,26 +9,62 @@ public class LineOfSight : MonoBehaviour
     private void Update()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, SightDistance))
+
+        Vector3 raycastFwd = transform.forward.normalized;
+        Vector3 raycastRight = (transform.right + transform.forward).normalized;
+        Vector3 raycastMidRight = (raycastRight + transform.forward).normalized;
+        Vector3 raycastLeft = (-transform.right + transform.forward).normalized;
+        Vector3 raycastMidLeft = (raycastLeft + transform.forward).normalized;
+
+        if (checkRays(raycastFwd, out hit))
         {
-            //Debug.Log(hit.transform.tag);
-            PlayerSeen = (hit.transform.tag == "Player");
+            if(hit.transform.tag == "Player")
+            {
+                PlayerSeen = true;
+            }
         }
-        if (Physics.Raycast(transform.position, (-transform.right + transform.forward).normalized, out hit, SightDistance))
+        if (checkRays(raycastLeft, out hit))
         {
-            PlayerSeen = (hit.transform.tag == "Player");
+            if (hit.transform.tag == "Player")
+            {
+                PlayerSeen = true;
+            }
         }
-        if (Physics.Raycast(transform.position, (transform.right + transform.forward).normalized, out hit, SightDistance))
+        if (checkRays(raycastRight, out hit))
         {
-            //Debug.Log((transform.right + transform.forward) * SightDistance);
-            PlayerSeen = (hit.transform.tag == "Player");
+            if (hit.transform.tag == "Player")
+            {
+                PlayerSeen = true;
+            }
+        }
+        if (checkRays(raycastMidRight, out hit))
+        {
+            if (hit.transform.tag == "Player")
+            {
+                PlayerSeen = true;
+            }
+        }
+        if (checkRays(raycastMidLeft, out hit))
+        {
+            if (hit.transform.tag == "Player")
+            {
+                PlayerSeen = true;
+            }
         }
 
-        Debug.DrawRay(transform.position, transform.forward * SightDistance, Color.green);
-        Debug.DrawRay(transform.position, (transform.right + transform.forward).normalized * SightDistance, Color.green);
-        Debug.DrawRay(transform.position, (-transform.right + transform.forward).normalized * SightDistance, Color.green);
 
-        Debug.Log(PlayerSeen);
+        Debug.DrawRay(transform.position, raycastFwd * SightDistance, Color.green);
+        Debug.DrawRay(transform.position, raycastRight * SightDistance, Color.green);
+        Debug.DrawRay(transform.position, raycastLeft * SightDistance, Color.green);
+        Debug.DrawRay(transform.position, raycastMidRight * SightDistance, Color.red);
+        Debug.DrawRay(transform.position, raycastMidLeft * SightDistance, Color.red);
+
+        //Debug.Log("PlayerSeen: " + PlayerSeen);
+    }
+
+    private bool checkRays(Vector3 rayToCheck, out RaycastHit hit)
+    {
+        return Physics.Raycast(transform.position, rayToCheck, out hit, SightDistance);
     }
 }
 

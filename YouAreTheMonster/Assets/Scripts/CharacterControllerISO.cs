@@ -9,9 +9,9 @@ public class CharacterControllerISO : MonoBehaviour
 
     private Rigidbody rb;
 
-    Vector3 forward, right;
+    private Vector3 forward, right;
 
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody>();
 
@@ -24,7 +24,7 @@ public class CharacterControllerISO : MonoBehaviour
     }
 
 
-    void Update()
+    private void Update()
     {
         if (Mathf.Abs(Input.GetAxis("Horizontal")) >= 0.25f || Mathf.Abs(Input.GetAxis("Vertical")) >= 0.25f)
         {
@@ -32,7 +32,7 @@ public class CharacterControllerISO : MonoBehaviour
         }
     }
 
-    void Move()
+    private void Move()
     {
         Vector3 rightMovement = right * Input.GetAxis("Horizontal");
         Vector3 forwardMovement = forward * Input.GetAxis("Vertical");
