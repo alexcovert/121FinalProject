@@ -22,5 +22,17 @@ public class House : MonoBehaviour
         {
             light.gameObject.SetActive(false);
         }
+
+        //Turn off emission materiasl
+        MeshRenderer[] mrs = GetComponentsInChildren<MeshRenderer>();
+        List<Material> mats = new List<Material>();
+        foreach (MeshRenderer mr in mrs)
+        {
+            mr.GetMaterials(mats);
+            foreach(Material mat in mats)
+            {
+                mat.SetColor("_EmissionColor", new Color(0, 0, 0, 1));
+            }
+        }
     }
 }
