@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 7134996532120206765}
   - component: {fileID: 7134996532119436685}
   - component: {fileID: 7134996532118306637}
+  - component: {fileID: 975259651172870422}
   m_Layer: 0
   m_Name: lightPostModern
   m_TagString: Untagged
@@ -96,7 +97,7 @@ Transform:
   m_GameObject: {fileID: 7134996532120297869}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 3.82, y: 0.125, z: 2.192}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.20000012, y: 0.2, z: 0.20000012}
   m_Children:
   - {fileID: 2084613059575302534}
   m_Father: {fileID: 0}
@@ -148,3 +149,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!136 &975259651172870422
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7134996532120297869}
+  m_Material: {fileID: 13400000, guid: f13242b580a98f745879880e4fa8eaa3, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3863617
+  m_Height: 7.812935
+  m_Direction: 1
+  m_Center: {x: -6.247194e-16, y: 3.9064674, z: -0.12513153}
