@@ -13414,6 +13414,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton
       objectReference: {fileID: 0}
+    - target: {fileID: 1754348132, guid: 9c1f5aa0d709bd24f9a63495c62e4ca4, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1754348136, guid: 9c1f5aa0d709bd24f9a63495c62e4ca4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.84
@@ -13510,6 +13514,30 @@ PrefabInstance:
       propertyPath: currentWaypoint
       value: 
       objectReference: {fileID: 865222433}
+    - target: {fileID: 862317987, guid: 9c1f5aa0d709bd24f9a63495c62e4ca4, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1093731836, guid: 9c1f5aa0d709bd24f9a63495c62e4ca4, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334742069, guid: 9c1f5aa0d709bd24f9a63495c62e4ca4, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1384687057, guid: 9c1f5aa0d709bd24f9a63495c62e4ca4, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1755011999, guid: 9c1f5aa0d709bd24f9a63495c62e4ca4, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1853639095, guid: 9c1f5aa0d709bd24f9a63495c62e4ca4, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c1f5aa0d709bd24f9a63495c62e4ca4, type: 3}
 --- !u!4 &1137956769 stripped
