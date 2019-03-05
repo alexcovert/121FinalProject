@@ -8,6 +8,7 @@ public class LineOfSight : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(PlayerSeen);
         RaycastHit hit;
 
         Vector3 raycastFwd = transform.forward.normalized;
@@ -53,18 +54,18 @@ public class LineOfSight : MonoBehaviour
         }
 
 
-        Debug.DrawRay(transform.position, raycastFwd * SightDistance, Color.green);
-        Debug.DrawRay(transform.position, raycastRight * SightDistance, Color.green);
-        Debug.DrawRay(transform.position, raycastLeft * SightDistance, Color.green);
-        Debug.DrawRay(transform.position, raycastMidRight * SightDistance, Color.red);
-        Debug.DrawRay(transform.position, raycastMidLeft * SightDistance, Color.red);
+        //Debug.DrawRay(transform.position + new Vector3(0, 0.5f, 0), raycastFwd * SightDistance, Color.green);
+        //Debug.DrawRay(transform.position, raycastRight * SightDistance, Color.green);
+        //Debug.DrawRay(transform.position, raycastLeft * SightDistance, Color.green);
+        //Debug.DrawRay(transform.position, raycastMidRight * SightDistance, Color.red);
+        //Debug.DrawRay(transform.position, raycastMidLeft * SightDistance, Color.red);
 
         //Debug.Log("PlayerSeen: " + PlayerSeen);
     }
 
     private bool checkRays(Vector3 rayToCheck, out RaycastHit hit)
     {
-        return Physics.Raycast(transform.position, rayToCheck, out hit, SightDistance);
+        return Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), rayToCheck, out hit, SightDistance);
     }
 }
 

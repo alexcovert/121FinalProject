@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3390917191470864676}
   m_Layer: 0
   m_Name: Tree2
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 245016427639774110}
   m_Layer: 0
   m_Name: Mesh1_Large_Oak_Dark_Model
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
