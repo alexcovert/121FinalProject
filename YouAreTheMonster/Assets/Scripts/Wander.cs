@@ -4,6 +4,9 @@
 public class Wander : MonoBehaviour
 {
     [SerializeField]
+    private bool prePlaced;
+
+    [SerializeField]
     private float speed;
 
     [SerializeField]
@@ -15,14 +18,17 @@ public class Wander : MonoBehaviour
     private Transform currentWaypoint;
 
     private Vector3 wayPoint;
-
+    private Score player;
     private LineOfSight sight;
 
     void Start()
     {
         sight = GetComponent<LineOfSight>();
 
-        SetDestination();
+        player = GameObject.Find("Player").GetComponent<Score>();
+
+        if(prePlaced)
+            SetDestination();
     }
 
     void Update()
@@ -57,6 +63,7 @@ public class Wander : MonoBehaviour
             if(!playerInSphere)
             {
                 sight.PlayerSeen = false;
+                player.Seen = false;
                 transform.LookAt(wayPoint);
             }
         }
@@ -71,6 +78,13 @@ public class Wander : MonoBehaviour
         wayPoint = nearest[rand].position;
         currentWaypoint = nearest[rand];
 
+        transform.LookAt(wayPoint);
+    }
+
+    public void SetDestination(Transform point)
+    {
+        wayPoint = point.position;
+        currentWaypoint = point;
         transform.LookAt(wayPoint);
     }
 
