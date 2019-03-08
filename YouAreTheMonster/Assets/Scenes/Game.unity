@@ -13651,6 +13651,10 @@ PrefabInstance:
       propertyPath: currentWaypoint
       value: 
       objectReference: {fileID: 865222433}
+    - target: {fileID: 1754348133, guid: 9c1f5aa0d709bd24f9a63495c62e4ca4, type: 3}
+      propertyPath: prePlaced
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c1f5aa0d709bd24f9a63495c62e4ca4, type: 3}
 --- !u!4 &1137956769 stripped
@@ -18091,9 +18095,46 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1100796204, guid: e7e08d3ec71d14c42b3d60df6750ffd0, type: 3}
+      propertyPath: spawns.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1100796204, guid: e7e08d3ec71d14c42b3d60df6750ffd0, type: 3}
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 1171802307}
+    - target: {fileID: 1100796204, guid: e7e08d3ec71d14c42b3d60df6750ffd0, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 1754348132, guid: 9c1f5aa0d709bd24f9a63495c62e4ca4,
+        type: 3}
+    - target: {fileID: 1100796204, guid: e7e08d3ec71d14c42b3d60df6750ffd0, type: 3}
+      propertyPath: spawns.Array.data[0]
+      value: 
+      objectReference: {fileID: 1820469760}
+    - target: {fileID: 1100796204, guid: e7e08d3ec71d14c42b3d60df6750ffd0, type: 3}
+      propertyPath: spawns.Array.data[1]
+      value: 
+      objectReference: {fileID: 563599834}
+    - target: {fileID: 1100796204, guid: e7e08d3ec71d14c42b3d60df6750ffd0, type: 3}
+      propertyPath: spawns.Array.data[2]
+      value: 
+      objectReference: {fileID: 1940106284}
+    - target: {fileID: 1100796204, guid: e7e08d3ec71d14c42b3d60df6750ffd0, type: 3}
+      propertyPath: spawns.Array.data[3]
+      value: 
+      objectReference: {fileID: 2060198243}
+    - target: {fileID: 1100796204, guid: e7e08d3ec71d14c42b3d60df6750ffd0, type: 3}
+      propertyPath: spawns.Array.data[4]
+      value: 
+      objectReference: {fileID: 1869284451}
+    - target: {fileID: 1100796204, guid: e7e08d3ec71d14c42b3d60df6750ffd0, type: 3}
+      propertyPath: timeToLose
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1100796204, guid: e7e08d3ec71d14c42b3d60df6750ffd0, type: 3}
+      propertyPath: sightBar
+      value: 
+      objectReference: {fileID: 2121036557}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7e08d3ec71d14c42b3d60df6750ffd0, type: 3}
 --- !u!1001 &1446988955
