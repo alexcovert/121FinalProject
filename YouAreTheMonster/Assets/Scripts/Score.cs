@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 using TMPro;
 
 public class Score : MonoBehaviour
@@ -17,6 +18,9 @@ public class Score : MonoBehaviour
     [SerializeField]
     private GameObject enemy;
 
+    [SerializeField]
+    private GameObject sightBarText;
+    private MeshRenderer[] uiRenderers;
     private string startingText;
 
     public bool Seen;
@@ -34,6 +38,7 @@ public class Score : MonoBehaviour
 
     private void Start()
     {
+        sightBarText.SetActive(false);
         startingText = scoreText.text;
     }
 
@@ -52,17 +57,25 @@ public class Score : MonoBehaviour
 
         if (Seen)
         {
+            if(sightBarText != null)
+            {
+                sightBarText.SetActive(true);
+            }
+
             sightBar.fillAmount += (Time.deltaTime / timeToLose);
 
             if (sightBar.fillAmount >= 1)
             {
-                //   Debug.Log("Game Over");
                 Initiate.Fade("GameOver", Color.black, 2);
             }
         }
 
         if (!Seen)
         {
+            if(sightBarText != null && sightBarText.activeInHierarchy)
+            {
+                Destroy(sightBarText, 5f);
+            }
             timer = false;
             sightBar.fillAmount -= Time.deltaTime;
         }
