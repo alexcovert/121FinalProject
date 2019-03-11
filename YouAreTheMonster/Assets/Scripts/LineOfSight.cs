@@ -13,10 +13,18 @@ public class LineOfSight : MonoBehaviour
 
     public bool timer = false;
 
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip seenSFX;
+    [SerializeField] private AudioClip notSeenSFX;
+    private bool playSeen = true;
+    private bool playNotSeen = false;
+
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         sightBar = GameObject.Find("FillImage").GetComponent<Image>();
     }
+
     private void Update()
     {
         RaycastHit hit;
@@ -32,6 +40,12 @@ public class LineOfSight : MonoBehaviour
             if(hit.transform.tag == "Player")
             {
                 PlayerSeen = true;
+                if (playSeen)
+                {
+                    audioSource.PlayOneShot(seenSFX);
+                    playSeen = false;
+                }
+                playNotSeen = true;
                 hit.transform.GetComponent<Score>().Seen = true;
             }
         }
@@ -40,6 +54,12 @@ public class LineOfSight : MonoBehaviour
             if (hit.transform.tag == "Player")
             {
                 PlayerSeen = true;
+                if (playSeen)
+                {
+                    audioSource.PlayOneShot(seenSFX);
+                    playSeen = false;
+                }
+                playNotSeen = true;
                 hit.transform.GetComponent<Score>().Seen = true;
             }
         }
@@ -48,6 +68,12 @@ public class LineOfSight : MonoBehaviour
             if (hit.transform.tag == "Player")
             {
                 PlayerSeen = true;
+                if (playSeen)
+                {
+                    audioSource.PlayOneShot(seenSFX);
+                    playSeen = false;
+                }
+                playNotSeen = true;
                 hit.transform.GetComponent<Score>().Seen = true;
             }
         }
@@ -56,6 +82,12 @@ public class LineOfSight : MonoBehaviour
             if (hit.transform.tag == "Player")
             {
                 PlayerSeen = true;
+                if (playSeen)
+                {
+                    audioSource.PlayOneShot(seenSFX);
+                    playSeen = false;
+                }
+                playNotSeen = true;
                 hit.transform.GetComponent<Score>().Seen = true;
             }
         }
@@ -64,35 +96,23 @@ public class LineOfSight : MonoBehaviour
             if (hit.transform.tag == "Player")
             {
                 PlayerSeen = true;
+                if (playSeen)
+                {
+                    audioSource.PlayOneShot(seenSFX);
+                    playSeen = false;
+                }
+                playNotSeen = true;
                 hit.transform.GetComponent<Score>().Seen = true;
             }
         }
         
-        //if(PlayerSeen && timer)
-        //{
-        //    Debug.Log("Hello?");
-        //    Debug.Log(sightBar.fillAmount);
-        //    sightBar.fillAmount += (Time.deltaTime / timeToLose);
-
-        //    if(sightBar.fillAmount >= 1)
-        //    {
-        //        //   Debug.Log("Game Over");
-        //        Initiate.Fade("GameOver", Color.black, 2);
-        //    }
-        //}
-
-        //if(!PlayerSeen)
-        //{
-        //    timer = false;
-        //    sightBar.fillAmount -= Time.deltaTime;
-        //}
-
-        //Debug.DrawRay(transform.position + new Vector3(0, 0.5f, 0), raycastFwd * SightDistance, Color.green);
-        //Debug.DrawRay(transform.position, raycastRight * SightDistance, Color.green);
-        //Debug.DrawRay(transform.position, raycastLeft * SightDistance, Color.green);
-        //Debug.DrawRay(transform.position, raycastMidRight * SightDistance, Color.red);
-        //Debug.DrawRay(transform.position, raycastMidLeft * SightDistance, Color.red);
-
+        if(!PlayerSeen && playNotSeen)
+        {
+            audioSource.PlayOneShot(notSeenSFX);
+            playNotSeen = false;
+            playSeen = true;
+        }
+    
         //Debug.Log("PlayerSeen: " + PlayerSeen);
     }
 
@@ -101,22 +121,6 @@ public class LineOfSight : MonoBehaviour
         return Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), rayToCheck, out hit, SightDistance);
     }
 
-    //private IEnumerator LoseTimer()
-    //{
-    //    yield return new WaitForSeconds(1);
-    //    timePassed++;
-    //    sightBar.fillAmount = (float)timePassed / (float)timeToLose;
-    //    Debug.Log(sightBar.fillAmount);
 
-    //    if (timePassed >= timeToLose)
-    //    {
-    //        timePassed = 0;
-    //        timer = null;
-    //    }
-    //    else
-    //    {
-    //        timer = StartCoroutine(LoseTimer());
-    //    }
-    //}
 }
 

@@ -1134,7 +1134,13 @@ MonoBehaviour:
     Background music by HaelDB on OpenGameArt
 
 
-    Other SFX by Ogrebane on OpenGameArt'
+    Other SFX from OpenGameArt by:
+
+    Ogrebane
+
+    bart
+
+    farfadet46'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9b7a105fb11a6e14d8ff3ddde07f2f94, type: 2}
   m_sharedMaterial: {fileID: 21778286310058164, guid: 9b7a105fb11a6e14d8ff3ddde07f2f94,
@@ -1204,12 +1210,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1175506267}
-    characterCount: 126
+    characterCount: 145
     spriteCount: 0
-    spaceCount: 24
-    wordCount: 21
+    spaceCount: 26
+    wordCount: 23
     linkCount: 0
-    lineCount: 7
+    lineCount: 10
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0
