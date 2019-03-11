@@ -23,6 +23,8 @@ public class Score : MonoBehaviour
     private MeshRenderer[] uiRenderers;
     private string startingText;
 
+    private AudioSource audioSource;
+
     public bool Seen;
     private bool timer;
 
@@ -40,6 +42,7 @@ public class Score : MonoBehaviour
     {
         sightBarText.SetActive(false);
         startingText = scoreText.text;
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -50,7 +53,7 @@ public class Score : MonoBehaviour
             ScoreCount++;
             scoreText.text = startingText + ScoreCount;
             house.Collect();
-
+            audioSource.Play();
             SpawnEnemy();
         }
 
