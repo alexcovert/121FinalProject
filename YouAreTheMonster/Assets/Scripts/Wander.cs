@@ -17,14 +17,21 @@ public class Wander : MonoBehaviour
     [SerializeField]
     private Transform currentWaypoint;
 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip pressSFX;
+    [SerializeField] private AudioClip eatenSFX;
+
     private Vector3 wayPoint;
     private Score player;
     private LineOfSight sight;
 
+
+    private int numTimesPressed = 0;
+
     void Start()
     {
         sight = GetComponent<LineOfSight>();
-
+        audioSource = GameObject.Find("Player").GetComponent<AudioSource>();
         player = GameObject.Find("Player").GetComponent<Score>();
 
         if(prePlaced)
@@ -62,9 +69,28 @@ public class Wander : MonoBehaviour
             //If the player leaves the overlap sphere, continue patrolling
             if(!playerInSphere)
             {
+                numTimesPressed = 0;
                 sight.PlayerSeen = false;
                 player.Seen = false;
                 transform.LookAt(wayPoint);
+            }
+        }
+
+
+        //Destroy if the monster spams enough
+        if(sight.PlayerSeen && Input.GetButtonDown("Jump"))
+        {
+            numTimesPressed++;
+            if (numTimesPressed >= 20)
+            {
+                player.Seen = false;
+                audioSource.PlayOneShot(eatenSFX);
+                numTimesPressed = 0;
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                audioSource.PlayOneShot(pressSFX);
             }
         }
     }

@@ -17215,7 +17215,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Don''t let the sight bar fill up! '
+  m_text: "Don't let the sight bar fill up! \nRun away or press space \nrepeatedly
+    to eat the trick-or-treater."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9b7a105fb11a6e14d8ff3ddde07f2f94, type: 2}
   m_sharedMaterial: {fileID: 21778286310058164, guid: 9b7a105fb11a6e14d8ff3ddde07f2f94,
@@ -17262,7 +17263,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 34
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -17285,12 +17286,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 852443753}
-    characterCount: 33
+    characterCount: 98
     spriteCount: 0
-    spaceCount: 7
-    wordCount: 7
+    spaceCount: 18
+    wordCount: 17
     linkCount: 0
-    lineCount: 1
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0
@@ -22578,6 +22579,10 @@ PrefabInstance:
       propertyPath: currentWaypoint
       value: 
       objectReference: {fileID: 865222433}
+    - target: {fileID: 1754348133, guid: 9c1f5aa0d709bd24f9a63495c62e4ca4, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1529791661}
     - target: {fileID: 1754348133, guid: 9c1f5aa0d709bd24f9a63495c62e4ca4, type: 3}
       propertyPath: prePlaced
       value: 1
