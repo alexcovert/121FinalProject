@@ -418,7 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9786f0ec7d7bea74ab602a68a9db8d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Game
+  sceneToLoad: Intro
   fadeSpeed: 2
   playAudioClip: 1
   audioClip: {fileID: 8300000, guid: 66dc08afd8ebaeb40979e948cf420a18, type: 3}
