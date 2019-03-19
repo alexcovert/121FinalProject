@@ -403,6 +403,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   currentWaypoint: {fileID: 0}
+  audioSource: {fileID: 0}
+  pressSFX: {fileID: 8300000, guid: daa688e058371b74292d5a08bcb3f707, type: 3}
+  eatenSFX: {fileID: 8300000, guid: 3ffd81a626a76f74fb8794b550d7e4bc, type: 3}
 --- !u!114 &7837874197148867004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415,7 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fef568fec1b3ffc4f8b57bc8820c94bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLose: 5
+  timeToLose: 3
   SightDistance: 3
   PlayerSeen: 0
   timer: 0
